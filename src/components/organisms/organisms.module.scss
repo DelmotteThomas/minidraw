@@ -1,0 +1,15 @@
+.drawingToolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border-bottom: 1px solid #e5e5e5;
+  background: #ffffff;
+}
+
+.toolsList {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
