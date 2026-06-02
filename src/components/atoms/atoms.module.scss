@@ -1,0 +1,298 @@
+.appButton {
+  border: 1px solid #d4d4d4;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #ffffff;
+  color: #111111;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.1s ease;
+
+  &:hover {
+    background: #f3f3f3;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.active {
+  border-color: #111111;
+  background: #111111;
+  color: #ffffff;
+}
+.container {
+  width: min(100%, var(--max-width));
+  margin-inline: auto;
+}
+
+/* Text */
+
+.text {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.textSize-xs {
+  font-size: 0.75rem;
+}
+
+.textSize-sm {
+  font-size: 0.875rem;
+}
+
+.textSize-md {
+  font-size: 1rem;
+}
+
+.textSize-lg {
+  font-size: 1.125rem;
+}
+
+.textSize-xl {
+  font-size: 1.35rem;
+}
+
+.textSize-2xl {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.15;
+}
+
+.textSize-3xl {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.textColor-default {
+  color: var(--color-text);
+}
+
+.textColor-muted {
+  color: var(--color-text-muted);
+}
+
+.textColor-bronze {
+  color: var(--color-bronze);
+}
+
+.textColor-white {
+  color: var(--color-white);
+}
+
+.textWeight-regular {
+  font-weight: 400;
+}
+
+.textWeight-medium {
+  font-weight: 500;
+}
+
+.textWeight-semibold {
+  font-weight: 600;
+}
+
+.textWeight-bold {
+  font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+/* Stack */
+
+.stack {
+  display: flex;
+}
+
+.stackDirection-row {
+  flex-direction: row;
+}
+
+.stackDirection-column {
+  flex-direction: column;
+}
+
+.stackWrap {
+  flex-wrap: wrap;
+}
+
+.stackGap-none {
+  gap: 0;
+}
+
+.stackGap-xs {
+  gap: 0.5rem;
+}
+
+.stackGap-sm {
+  gap: 0.75rem;
+}
+
+.stackGap-md {
+  gap: 1rem;
+}
+
+.stackGap-lg {
+  gap: 1.5rem;
+}
+
+.stackGap-xl {
+  gap: 2rem;
+}
+
+.stackJustify-start {
+  justify-content: flex-start;
+}
+
+.stackJustify-center {
+  justify-content: center;
+}
+
+.stackJustify-end {
+  justify-content: flex-end;
+}
+
+.stackJustify-between {
+  justify-content: space-between;
+}
+
+.stackAlign-start {
+  align-items: flex-start;
+}
+
+.stackAlign-center {
+  align-items: center;
+}
+
+.stackAlign-end {
+  align-items: flex-end;
+}
+
+.stackAlign-stretch {
+  align-items: stretch;
+}
+
+/* Badge */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  padding: 0.45rem 0.75rem;
+
+  border-radius: 999px;
+
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.badge-default {
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  background: rgba(176, 141, 87, 0.08);
+}
+
+.badge-outline {
+  border: 1px solid var(--color-border);
+  color: var(--color-bronze);
+  background: transparent;
+}
+
+.badge-soft {
+  border: 1px solid transparent;
+  color: var(--color-bronze);
+  background: rgba(176, 141, 87, 0.12);
+}
+
+/* Divider */
+
+.divider {
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-border),
+    transparent
+  );
+}
+
+/* Modal */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+
+  display: grid;
+  place-items: center;
+
+  padding: 1rem;
+
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.modal {
+  width: min(100%, 980px);
+  max-height: 88vh;
+  overflow: auto;
+
+  padding: 1.5rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(176, 141, 87, 0.1),
+      transparent 40%
+    ),
+    var(--color-surface);
+}
+
+.codeBlock {
+  max-height: 52vh;
+  overflow: auto;
+
+  padding: 1rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  background: #090909;
+}
+
+.codeBlock pre {
+  margin: 0;
+}
+
+.codeBlock code {
+  color: var(--color-text);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  white-space: pre;
+}
+
+@media (max-width: 720px) {
+  .modal {
+    max-height: 92vh;
+    padding: 1rem;
+  }
+
+  .codeBlock {
+    max-height: 48vh;
+  }
+}
