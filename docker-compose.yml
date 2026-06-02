@@ -1,0 +1,20 @@
+services:
+  minidraw-app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev
+    container_name: minidraw-app
+    working_dir: /app
+    volumes:
+      - .:/app
+      - minidraw-node-modules:/app/node_modules
+      - minidraw-next:/app/.next
+      - minidraw-pnpm-store:/app/.pnpm-store
+    ports:
+      - "3000:3000"
+    command: sh -c "pnpm install && pnpm dev"
+
+volumes:
+  minidraw-node-modules:
+  minidraw-next:
+  minidraw-pnpm-store:
